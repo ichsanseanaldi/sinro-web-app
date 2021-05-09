@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <%- include ('./partials/head.ejs') %>
+    
+<body class="bg-blacked">
+  
+    <%- include ('./partials/nav.ejs') %>
+
+    <div class="container flex flex-col-dir flex-j-c flex-a-c margin-top-70 ">
+
+        <div class="inside-wrapper">
+
+            <% if(result && result.length > 0){ %>
+
+                <h1 class="m-u-d-10">Users List :</h1>
+
+                <table class="adminTable">
+
+                    <tr>
+
+                        <th>Username</th>
+
+                        <th>Password</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                    <% result.forEach (r => { %>  
+
+                    <tr>
+
+                        <td><%= r.username %></td>
+
+                        <td><%= r.password %></td>
+
+                        <% if(r.isAdmin === 0){ %> 
+
+                            <td><a class="red" href="/admin/delete/<%= r.id_akun %>">Delete</a> / <a class="primary" href="/admin/update/<%= r.id_akun %> ">Update</a></td>
+
+                        <% }else{ %> 
+
+                             <td>-</td>
+
+                        <% } %>    
+
+                    </tr>
+
+                    <% }) %> 
+
+                </table>
+
+            <% } %>  
+        
+        </div>
+
+        <h1 class="centered-msg <%= status === true ? "popup-primary " : status === false ? "popup-warning" : "-" %> ">
+
+            <%= msg %>
+
+        </h1> 
+
+    </div> 
+
+</body>
+</html>

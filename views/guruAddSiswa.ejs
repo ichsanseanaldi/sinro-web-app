@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('./partials/head.ejs') %>
+<body>
+
+    <%- include ('./partials/navGuru.ejs') %>
+
+
+    <div class="container flex flex-j-c flex-a-c margin-top-50 m-l-200 flex-col-dir "> 
+
+        <div class="backbutton w-80">
+
+            <a class=" warning-btn" href="/kelas/kelola"><i class="fa fa-arrow-left"></i> Kembali</a>
+
+        </div>
+
+        <div class="inside-wrapper flex flex-col-dir flex-j-c flex-a-c">  
+
+            <div class="words heading">
+
+                <h1>Tambah Data Siswa</h1>
+
+            </div>
+
+            <div class="form-wrapper m-u-d-20 w-40">
+
+                <form action="/siswa/" method="post">
+
+                    <div class="input-wrapper flex flex-col-dir flex-j-c flex-a-c">
+
+                        <input class="input-control m-u-d-20 w-80" type="text" name="nama_siswa" placeholder="Nama Siswa" required>
+
+                        <input class="input-control m-u-d-20 w-80" type="text" name="nis" placeholder="Nomor Induk Siswa (NIS)" required>
+
+                        <input type="hidden" name="id_kelas" value="<%= req.session.idKelas%>" required>
+
+                        <input class="btn primary-btn m-u-d-20 w-80" type="submit" value="Simpan & Tambahkan">
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <h1 class=<%= stats === false ? "popup-warning" : "-" %>> <%= msg %> </h1>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

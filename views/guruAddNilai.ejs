@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include ('./partials/head.ejs') %>
+
+<body>
+
+    <%- include ('./partials/navGuru.ejs') %>
+
+    
+
+    <div class="container flex flex-j-c flex-a-c margin-top-50 m-l-200 flex-col-dir"> 
+
+        <div class="backbutton w-80">
+
+            <a class=" warning-btn" href="/kelas/kelola"><i class="fa fa-arrow-left"></i> Kembali</a>
+
+        </div>
+
+        <div class="inside-wrapper flex flex-col-dir flex-j-c flex-a-c">  
+
+            <h1>Input Nilai</h1>
+
+            <% result.forEach(h=>{ %>
+
+                <table class="infotable m-u-d-20 bg-ligthgrey">
+
+                    <tr>
+                        <td>Nama Siswa</td>
+
+                        <td>:</td>
+
+                        <th><%= h.nama_siswa %></th>
+
+                    </tr>
+
+                    <tr>
+                        <td>NIS</td>
+
+                        <td>:</td>
+
+                        <th><%= h.nis %></th>
+
+                    </tr>      
+
+                    <tr>
+                        <td>Kelas</td>
+
+                        <td>:</td>
+
+                        <th><%= h.nama_kelas %></th>
+
+                    </tr>  
+
+                </table>
+
+            <%})%>
+
+                <table class="siswatable bordered m-u-d-20">
+
+                    <form action="/siswa/insertNilai" method="POST">
+
+                    <tr>
+
+                        <th>No</th>
+
+                        <th>Mata Pelajaran</th>
+
+                        <th class="w-20" >Nilai</th>
+
+                    </tr>
+
+                    <tr>
+                        <td>1</td>
+
+                        <td>Matematika</td>
+                        
+                        <td class="w-20" ><input class="input-control m-u-d-20 bordered " type="number" min="1" max="100" size="10" name="nilai_mtk" placeholder="Nilai (0-100)" required></td>
+                        
+                    </tr>
+
+                    <tr>
+
+                        <td>2</td>
+
+                        <td>Olahraga</td>
+
+                        <td class="w-20"><input class="input-control m-u-d-20 bordered " type="number" min="1" max="100" size="10" name="nilai_olahraga" placeholder="Nilai (0-100)" required></td>
+
+                    </tr>
+
+                    <input type="hidden" name="id_rapor" value="<%= result[0].id_rapor %> ">
+
+
+                </table>
+
+                <input class="btn primary-btn m-u-d-20" type="submit" value="Simpan & Selesai">
+
+                </form>
+
+                
+                
+            
+
+        </div>
+
+    </div>
+
+</body>
+</html>

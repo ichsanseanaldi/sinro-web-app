@@ -1,0 +1,89 @@
+<nav class="horizontal flex flex-j-c flex-a-c">
+
+    <div class="nav-container flex p-10-15">
+
+        <div class="brand flex flex-1 flex-a-c flex-j-s p-10-25">
+
+            SINRO Admin
+
+        </div>
+
+        <div class="list flex flex-1 flex-a-c flex-j-e p-10-15">
+
+            <div class="link">
+
+                <a class=<%= title === 'Home' ? "active-2" : "-"  %> href="/admin/home">Home</a>
+
+            </div>
+
+            <div class="link">
+
+                <a class=<%= title === 'Form' ? "active-2" : "-"  %> href="/adminform">Add User</a>
+
+            </div>
+
+            <div class="link">
+
+                <a class="trigger danger-btn" href="#">Sign out</a>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+</nav>
+
+
+<div class="modal-container none flex flex-a-c flex-j-c">
+
+    <div class="modal-card flex flex-a-c flex-j-c">
+
+        <div class="modal-wrapper w-100 flex flex-col-dir flex-j-c">
+
+            <div class="picture m-u-d-10 ">
+
+                <img class="h-w-200 " src="/assets/confusion.png" alt="">
+
+            </div>
+
+            <h1 >Sign Out ?</h1>
+
+            <div class="button-group flex flex-j-c m-u-d-20">
+
+                <div class="m-l-r-10">
+
+                    <a class="trigger secondary-btn"  href="#">Cancel</a>
+
+                </div>
+
+                <div class="m-l-r-10">
+
+                    <a class="danger-btn" href="/logout">Sign Out <i class="fa fa-sign-out"></i></a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script>
+
+    const container = document.querySelector ('.modal-container');
+    const triggers = document.querySelectorAll('.trigger');
+
+
+    triggers.forEach(t=>{
+        t.addEventListener('click',()=>{
+            container.classList.toggle('none')
+        });
+    })
+
+
+</script>

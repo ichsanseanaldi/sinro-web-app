@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('./partials/head.ejs') %>
+<body>
+  
+    <% if(result[0].hasClass === 0){ %> 
+
+        <%- include ('./partials/navGuruNew.ejs') %>
+        
+        <div class="container flex flex-j-c flex-a-c margin-top-50 "> 
+    
+            <div class="inside-wrapper flex flex-col-dir flex-j-c flex-a-c">   
+
+                <h1>Pilih Kelas yang kamu akan kelola ya!</h1>
+                
+                <div class="form-wrapper m-u-d-20 w-40">
+
+                    <form action="/kelas/pilih" method="POST">
+
+                        <div class="input-wrapper flex flex-col-dir flex-j-c flex-a-c">
+
+                            <label for="id_namakelas">Kelas yang tersedia : </label>
+
+                            <select class=" m-u-d-20 p-10-15 " id="dropdown" name="id_namakelas" required>
+
+                                <% if(listKelas.length > 0){ %> 
+
+                                    <% listKelas.forEach(l=>{%>
+
+                                        <% if(l.status === 0) { %>
+
+                                            <option value="<%= l.id_namakelas %>">
+                                                <%= l.nama_kelas%>
+                                            </option>
+
+                                        <% } %>
+
+                                    <%  }) %> 
+
+                                <%  } %> 
+
+                            </select>
+
+                            <input type="hidden" name="id_guru" value="<%= result[0].id_guru %>" required>
+
+                            <input type="hidden" name="nama_guru" value="<%= result[0].nama %>" required>
+
+                            <input class="btn primary-btn m-u-d-20 w-80" type="submit" value="Simpan & Lanjut">
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    <%} else{ %>
+    
+    <%- include ('./partials/navGuru.ejs') %>
+
+    <div class="container flex flex-j-c flex-a-c margin-top-50 m-l-200"> 
+
+        <div class="inside-wrapper flex flex-col-dir flex-j-c flex-a-c">
+            
+            <div class=" picture">
+
+                <img class=" h-w-300 m-u-d-10 " src="/assets/group.png">
+
+            </div>
+
+            <h1 class="m-u-d-10" >Hi, <%= result[0].nama %> ! </h1>
+
+            <a class=" m-u-d-10 primary-btn " href="/kelas/kelola">Mulai Mengelola Kelas <i class="fa fa-arrow-right"></i></a>
+
+        </div>
+
+    </div>
+
+    <% } %> 
+
+
+</body>
+</html>

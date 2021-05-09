@@ -1,0 +1,18 @@
+
+<%- include ('./navGuruNew.ejs') %> 
+
+<nav class=" p-15-10 vertical flex flex-j-c b-r flex-a-s bg-blacked">
+    <div class="nav-container flex flex-col-dir h-100">
+        <div class="brand flex flex-1 flex-a-s flex-j-s p-10-25 ">
+            SINRO Guru 
+        </div>
+        <div class="list flex flex-3 flex-a-s flex-j-s flex-col-dir">
+            <div class="link m-u-d-20">
+                <a class=<%= title === 'Home' ? "active-2" : '-'%> href="/guru/home"><i class="fa fa-home"></i> Home</a>
+            </div>
+            <div class="link m-u-d-20">
+                <a class=<%= title === 'Kelola' ? "active-2" : '-'%> href="/kelas/kelola"><i class="fa fa-list"></i> Pengelolaan</a>
+            </div>
+        </div>
+    </div>
+</nav>

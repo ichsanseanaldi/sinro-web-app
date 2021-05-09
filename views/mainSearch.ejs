@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include ('./partials/head.ejs') %>
+
+<body>
+
+    <%- include ('./partials/mainNav.ejs') %> 
+
+    <div class="container flex flex-j-c flex-a-c">
+
+        <div class="inside-wrapper">
+
+            <div class="form-container flex flex-a-c flex-j-c flex-col-dir ">
+
+                <div class="form-wrapper w-80 margin-top-70 p-15-20">
+
+                    <div class="heading-form">
+
+                        <p>Masukan Nomor Induk Siswa <b>(NIS)</b> : </p>   
+
+                    </div>  
+
+                    <form action="/siswa/search" method="GET">
+
+                        <div class="input-wrapper flex"> 
+
+                            <input class="input-control flex-3" type="text" name="nis" id="nis" placeholder="Nomor Induk Siswa" required>  
+
+                            <button class="btn primary-btn flex-1"type="submit"> Cari <i class=" fa fa-search"></i> </button>
+
+                        </div>
+
+                    </form>
+
+                </div>  
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container m-u-d-40 flex flex-j-c flex-a-c flex-col-dir">
+
+    <% if(result) { %>
+
+        <% if(result.length>0) { %>
+
+            <% result.forEach(r=>{ %>
+
+                <div class="inside-wrapper">
+
+                    <div class="words">
+
+                        <div class="heading m-u-d-20">
+
+                            <h1> Hasil pencarian NIS : <span class="primary"><%= r.nis %></span></h1>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-container flex flex-j-c flex-a-c">
+
+                        <div class="w-60 flex flex-j-c flex-a-c flex-col-dir">
+
+                            <table class="infotable bordered">
+
+                                <tr>
+                                    <td>Nama</td>
+
+                                    <td>:</td>
+
+                                    <th><%= r.nama_siswa %></th>
+
+                                </tr>
+
+                                <tr>
+                                    <td>NIS</td>
+
+                                    <td>:</td>
+
+                                    <th><%= r.nis%></th>
+
+                                </tr>      
+
+                                <tr>
+                                    <td>Kelas</td>
+
+                                    <td>:</td>
+
+                                    <th><%= r.nama_kelas %></th>
+
+                                </tr>  
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-container flex flex-a-c flex-j-c ">
+
+                        <div class="flex flex-a-c flex-j-c w-60 m-u-d-40 flex-col-dir">
+
+                            <div class="m-u-d-20">
+
+                                <p>Hasil Nilai Raport</p>
+
+                            </div>
+
+                            <table class="raport bordered">
+
+                                <tr>
+                                    <th>No</th>
+
+                                    <th>Mata Pelajaran</th>
+
+                                    <th>Nilai</th>
+
+                                </tr>
+
+                                <tr>
+                                    <td>1</td>
+
+                                    <td>Matematika</td>
+
+                                    <td class=<%= r.nilai_mtk > 60 ? "-" : "red"  %>><%= r.nilai_mtk %></td>
+
+                                </tr>
+
+                                <tr>
+                                    <td>2</td>
+
+                                    <td>Olahraga</td> 
+
+                                    <td class=<%= r.nilai_olahraga > 60 ? "-" : "red"  %>><%= r.nilai_olahraga %></td>
+
+                                </tr>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            <% }) %> 
+
+        <% } else { %>  
+
+            <h1 class=" popup-warning ">Data siswa tidak ditemukan..</h1>
+
+        <% } %> 
+
+    <% } %>
+
+    </div> 
+
+</body>
+</html>

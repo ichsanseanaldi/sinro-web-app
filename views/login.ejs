@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include ('./partials/head.ejs') %>
+
+<body>
+
+    <%- include ('./partials/mainNav.ejs') %> 
+
+    <div class="container flex flex-j-c flex-a-c margin-top-70">
+
+        <div class="inside-wrapper flex flex-j-ev flex-a-c ">
+
+            <div class="picture p-20-15">
+
+                <img class="h-w-300 margin-bottom-50" src="./assets/presentation.png" alt="">
+    
+            </div>
+
+            <div class=" flex flex-j-c flex-a-c flex-col-dir">
+
+                <div class="words heading">
+
+                    <h1>Sign In</h1>
+    
+                </div>
+    
+                <div class="form-wrapper m-u-d-20 ">
+    
+                    <form action="/login" method="POST">
+        
+                        <div class="input-wrapper flex flex-col-dir flex-j-c flex-a-c">
+        
+                            <input class="input-control m-u-d-20 w-80 bordered" type="text" name="username" placeholder="Username" required>
+                    
+                            <input class="input-control m-u-d-20 w-80 bordered" type="password" name="password" placeholder="Password" required id="password">
+    
+                            <div class=" flex ">
+    
+                                <input class="m-l-r-10 scaled" type="checkbox" name="toggle" id="toggle">
+    
+                                <label class="m-l-r-10" for="toggle">Show Password</label>
+    
+                            </div>
+                            
+                            <button class="primary-btn btn m-u-d-20 w-80" type="submit">Sign In <i class="fa fa-sign-in"></i></button>
+    
+                        </div>
+        
+                    </form>
+    
+                </div>
+
+                <h3 class=<%= stats === false ? " popup-warning " : "hid" %>> <%= stats === false ? msg : '-' %> </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+</body>
+
+<script>
+
+    const toggle = document.querySelector('#toggle');
+
+    toggle.addEventListener('click', ()=>{
+
+        const input = document.querySelector('#password');
+
+        input.type === "password" ? input.type = "text" : input.type = "password"
+
+    })
+
+</script>
+
+<script>
+
+    history.pushState(null, null, null);
+
+    window.addEventListener('popstate', function () {
+
+        history.pushState(null, null, null);
+
+    });
+
+</script>
+
+
+</html>

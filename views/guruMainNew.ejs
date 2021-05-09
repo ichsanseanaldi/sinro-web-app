@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include ('./partials/head.ejs') %>
+
+<body>
+
+    <%- include ('./partials/navGuruNew.ejs') %>
+
+    <div class="container flex flex-j-c flex-a-c margin-top-50 ">
+
+        <div class="inside-wrapper flex flex-col-dir flex-j-c flex-a-c">
+
+            <div class="words">
+
+                <div class="heading">
+
+                    <h1>Selamat Datang di SINRO Guru!</h1>
+
+                </div>
+
+                <div class="paragraph">
+
+                    Sebelum mulai tolong isi data dibawah ya!
+
+                </div>
+
+            </div>
+
+            <div class="form-wrapper m-u-d-20 w-40">
+
+                <form action="/guru/" method="POST">
+
+                    <div class="input-wrapper flex flex-col-dir flex-j-c flex-a-c">
+
+                        <input class="input-control m-u-d-20 w-80" type="text" name="nip" id="nip" placeholder="NIP" required>
+
+                        <input class="input-control m-u-d-20 w-80" type="text" name="nama" id="nama" placeholder="Nama Lengkap" required>
+
+                        <input type="hidden" name="id_akun" value="<%= id %>">
+
+                        <input class="primary-btn m-u-d-20 w-80" type="submit" value="Simpan">
+
+                    </div>
+
+                </form>
+
+            </div>
+
+            <h3 class=<%= stats === true ? "primary" : "red" %>> <%= msg %> </h3>
+     
+        </div>
+
+    </div>
+
+</body>
+</html>

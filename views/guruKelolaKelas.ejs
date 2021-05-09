@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('./partials/head.ejs') %>
+<body>
+
+    <%- include ('./partials/navGuru.ejs') %>
+
+    <div class="container flex flex-j-c flex-a-c margin-top-20 m-l-200 "> 
+
+        <div class="inside-wrapper flex flex-col-dir flex-j-c flex-a-c"> 
+            
+            <% hasil.forEach(h=>{ %>
+
+                <h1>Pengelolaan Kelas <%= h.nama_kelas %> </h1>
+
+                <table class="infotable m-u-d-20 bg-ligthgrey">
+
+                    <tr>
+                        <td>Kelas</td>
+
+                        <td>:</td>
+
+                        <th><%= h.nama_kelas %></th>
+
+                    </tr>
+
+                    <tr>
+                        <td>Pengajar / Guru</td>
+
+                        <td>:</td>
+
+                        <th><%= h.nama_guru %></th>
+
+                    </tr>      
+
+                    <tr>
+                        <td>NIP</td>
+
+                        <td>:</td>
+
+                        <th><%= h.nip %> </th>
+
+                    </tr>  
+
+                </table>
+
+            <%})%>
+
+            <% if(hasilSiswa.length > 0 ) { %> 
+
+                <div class="words m-u-d-20 flex flex-a-c flex-j-b w-100">
+
+                    <p>Daftar Siswa :</p>
+    
+                    <p>Jumlah Siswa : <%= hasilSiswa.length %> </p>
+    
+                </div>
+
+                <table class="siswatable bordered">
+
+                    <tr>
+
+                        <th>No</th>
+
+                        <th>NIS</th>
+
+                        <th>Nama Siswa</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                    <% let i = 1; %> 
+
+                    <% hasilSiswa.forEach(siswa=>{%> 
+
+                        <tr>
+
+                            <td><%= i++ %> </td>
+
+                            <td><%= siswa.nis %></td>
+
+                            <td><%= siswa.nama_siswa %></td>
+
+                            <% if(siswa.hasNilai === 0){ %>
+
+                                <td>
+
+                                    <a class="primary" href="/siswa/addNilai/<%= siswa.id_siswa %>">Input Nilai</a>
+
+                                </td>
+
+                            <% } else { %>
+                                
+                                <td class="disabled" >Siswa Telah Dinilai <i class="fa fa-check"></i></td>
+                                
+                            <% } %>   
+
+                        </tr>
+                    
+                    <%  })  %>   
+
+                </table>
+            
+            <% } else {%>
+
+
+                <div class="picture">
+
+                    <img class=" h-w-200" src="/assets/problem-solving.png" alt="">
+
+                </div>
+                            
+                <h1>Belum ada siswa yang terdaftar.</h1>
+        
+            <% } %> 
+            
+            <a class="primary-btn m-u-d-20" href="/kelas/addsiswa">Tambah Data Siswa <i class="fa fa-plus m-l-r-10"></i> </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

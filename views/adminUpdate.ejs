@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('./partials/head.ejs') %>
+
+<body class="bg-blacked">
+
+    <%- include ('./partials/nav.ejs') %>
+
+    <div class="container flex flex-j-c flex-a-c margin-top-70">
+
+        <div class="inside-wrapper flex flex-col-dir flex-j-c flex-a-c">
+   
+            <div class="words heading">
+
+                <h1>Update User</h1>
+
+            </div>
+
+            <div class="form-wrapper m-u-d-20 w-40">
+
+                <% if (result && result.length>0){ %>
+                    
+                    <% result.forEach(r=>{ %>  
+
+                        <form action="/admin/u" method="POST">
+
+                            <div class="input-wrapper flex flex-col-dir flex-j-c flex-a-c">
+
+                                <input type="hidden" name="id_akun" value="<%= r.id_akun %> ">
+
+                                <input class="input-control m-u-d-20 w-80" type="text" placeholder="Username" name="username" value="<%= r.username %>" required>
+
+                                <input class="input-control m-u-d-20 w-80" type="text" placeholder="Password" name="password" value="<%= r.password %>" required>
+
+                                <input class="btn primary-btn m-u-d-20 w-80" type="submit" value="Save & Update">
+
+                            </div>
+
+                        </form>
+
+                    <% }) %> 
+
+                <% } %> 
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
