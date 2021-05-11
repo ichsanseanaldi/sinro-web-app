@@ -99,6 +99,10 @@ table th,td{
     border-bottom: 2px solid var(--color-darkgrey);
 }
 
+.tdec{
+    text-decoration: underline;
+}
+
 .bordered{
     border:2px solid var(--color-lightgrey);
 }
@@ -209,6 +213,13 @@ table th,td{
     cursor: pointer;
 }
 
+.danger-btn-border{
+    padding: 10px 15px;
+    border: 2px solid var(--color-pink);
+    color: var(--color-pink);
+    cursor: pointer;
+}
+
 .warning-btn{
     padding: 10px 15px;
     background-color: var(--color-orange);
@@ -270,10 +281,12 @@ table th,td{
 
 .flex-j-e{
     justify-content: end;
+    justify-content: flex-end;
 }
 
 .flex-j-s{
     justify-content: start;
+    justify-content: flex-start;
 }
 
 .flex-j-b{
@@ -492,7 +505,6 @@ nav.vertical{
 }
 
 .form-wrapper{
-    /* background-color: var(--color-lightgrey); */
     background: transparent;
     border: 1px solid var(--color-lightgrey);
     border-radius: 10px;
