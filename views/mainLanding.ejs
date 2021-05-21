@@ -7,7 +7,7 @@
 
    <%- include ('./partials/mainNav.ejs') %> 
 
-    <div class="container flex flex-j-c flex-a-s margin-top-20" >
+    <div class="container flex flex-j-c flex-a-s margin-top-30" >
 
         <div class="inside-wrapper flex flex-j-c flex-a-c flex-col-dir">
 
@@ -21,16 +21,16 @@
 
                 <div class="heading">
 
-                    <h1>Sistem Informasi Nilai Rapor Online</h1>
+                    <h1 class="after">Sistem Informasi Nilai Rapor Online</h1>
 
                 </div>
 
                 <div class="paragraph">
 
-                    <p>
-                        "SINRO merupakan website yang menyajikan informasi mengenai nilai Rapor
+                    <p >
+                        SINRO merupakan website yang menyajikan informasi mengenai nilai Rapor
                         peserta didik yang bisa diakses oleh pengguna dengan mencari menggunakan 
-                        Nomor Induk Siswa."
+                        Nomor Induk Siswa.
                     </p>
                     
                 </div>
@@ -41,22 +41,24 @@
 
                 <div class="link">
 
-                    <a class = "primary-btn" href="/search">Cari Siswa <i class="fa fa-search"></i></a>
+                    <a class = "primary-btn w-100" href="/search">Cari Siswa <i class="fa fa-search"></i></a>
 
                 </div>
 
-                <p class="p-u-d-10">atau</p>
+                <p class="margin-top-10 p-u-d-10 separator-wrapper">
+                    <span class="separator-words">atau</span>    
+                </p>
 
                 <div class="link">
 
-                    <a class="secondary-btn" href="/mainLogin">Sign In sebagai Guru</a>
+                    <a class="secondary-btn" href="/mainLogin">Sign In sebagai Guru <i class="fa fa-sign-in"></i></a>
 
                 </div>
 
             </div>
         
         </div>
-
+    
     </div>
 
 </body>

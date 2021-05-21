@@ -1,6 +1,5 @@
 const model = require ('../models/siswaModel');
 const rapor = require ('../models/raporModel');
-const siswa = require('../models/siswaModel');
 
 exports.setSiswa = (req,res)=>{
 
@@ -32,7 +31,7 @@ exports.setNilaiSiswa = (req,res)=>{
 
         err? console.log(err) : 
 
-        siswa.updateHasNilai([1,id], (err)=>{
+        model.updateHasNilai([1,id], (err)=>{
 
             err ? console.log(err) : res.redirect('/kelas/kelola')
 

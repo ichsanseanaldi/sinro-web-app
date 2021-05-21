@@ -4,7 +4,7 @@ const controller = require('../controllers/adminController');
 
 router.get('/home', controller.getAkunAll );
 
-router.get('/search', controller.getAkunByID );
+// router.get('/search', controller.getAkunByID );
 
 router.post('/', controller.setAkun);
 

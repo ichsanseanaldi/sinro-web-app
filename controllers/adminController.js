@@ -12,19 +12,19 @@ exports.getAkunAll = (req, res)=>{
 
 }
 
-exports.getAkunByID = (req,res)=>{
+// exports.getAkunByID = (req,res)=>{
     
-    const id = req.query.id;
+//     const id = req.query.id;
 
-     model.getByID(id,(err,result)=>{
+//      model.getByID(id,(err,result)=>{
 
-        err ? 
-            console.log(err) : req.session.logged ?  
-                res.render('adminCari',{result,msg:'No Result!'}) : res.redirect('/mainLogin');
+//         err ? 
+//             console.log(err) : req.session.logged ?  
+//                 res.render('adminCari',{result,msg:'No Result!'}) : res.redirect('/mainLogin');
         
-    })
+//     })
  
-}
+// }
 
 exports.setAkun = (req,res)=>{
 

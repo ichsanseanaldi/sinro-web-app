@@ -1,13 +1,13 @@
-const { static } = require('express');
 const express = require('express');
 const app = express();
+
 const akun = require('./routes/adminRoute');
 const login = require('./routes/loginRoute');
 const guru = require ('./routes/guruRoute');
 const kelas = require ('./routes/kelasRoute');
 const siswa = require ('./routes/siswaRoute');
-const session = require('express-session');
 
+const session = require('express-session');
 
 app.use(session({
     secret : '1805420',
@@ -65,5 +65,5 @@ app.use((req,res)=>{
 })
 
 app.listen(5000, ()=>{
-    console.log('listening..')
+    console.log('Listening to Port 5000')
 })

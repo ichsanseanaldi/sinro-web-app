@@ -27,7 +27,7 @@
 
                             <input class="input-control flex-3" type="text" name="nis" id="nis" placeholder="Nomor Induk Siswa" required>  
 
-                            <button class="btn primary-btn flex-1"type="submit"> Cari <i class=" fa fa-search"></i> </button>
+                            <button class="btn primary-btn flex-1"type="submit"> Cari Siswa <i class=" fa fa-search"></i> </button>
 
                         </div>
 
@@ -55,7 +55,7 @@
 
                         <div class="heading m-u-d-20">
 
-                            <h1> Hasil pencarian NIS : <span class="primary"><%= r.nis %></span></h1>
+                            <p>Ditemukan 1 Hasil pencarian NIS : <span class="primary"><strong><%= r.nis %></strong></span></p>
 
                         </div>
 
@@ -65,7 +65,7 @@
 
                         <div class="w-60 flex flex-j-c flex-a-c flex-col-dir">
 
-                            <table class="infotable bordered">
+                            <table class="infotable bg-subtle">
 
                                 <tr>
                                     <td>Nama</td>
@@ -112,10 +112,13 @@
 
                             <table class="raport bordered">
 
-                                <tr>
+                                <tr class="bg-blacklight">
+                                    
                                     <th>No</th>
 
                                     <th>Mata Pelajaran</th>
+
+                                    <th>KKM</th>
 
                                     <th>Nilai</th>
 
@@ -126,16 +129,20 @@
 
                                     <td>Matematika</td>
 
-                                    <td class=<%= r.nilai_mtk > 60 ? "-" : "red"  %>><%= r.nilai_mtk %></td>
+                                    <td>70</td>
+
+                                    <td class=<%= r.nilai_mtk > 70 ? "-" : "red"  %>><%= r.nilai_mtk %></td>
 
                                 </tr>
 
                                 <tr>
                                     <td>2</td>
 
-                                    <td>Olahraga</td> 
+                                    <td>Olahraga</td>
+                                    
+                                    <td>70</td>
 
-                                    <td class=<%= r.nilai_olahraga > 60 ? "-" : "red"  %>><%= r.nilai_olahraga %></td>
+                                    <td class=<%= r.nilai_olahraga > 70 ? "-" : "red"  %>><%= r.nilai_olahraga %></td>
 
                                 </tr>
 
@@ -151,7 +158,7 @@
 
         <% } else { %>  
 
-            <h1 class=" popup-warning ">Data siswa tidak ditemukan..</h1>
+            <p class=" popup-warning ">Data siswa tidak ditemukan..</p>
 
         <% } %> 
 

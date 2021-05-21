@@ -24,19 +24,18 @@ kelas.setData = (data,callback)=>{
 
 kelas.getData = (callback)=>{
 
-
     const query = 'SELECT * FROM kelas'
 
     db.query(query, (err,rows)=>{
 
-        err ? console.log(err) :callback(null,rows);
+        err ? console.log(err) : callback(null,rows);
 
     })
 
 }
 
 
-kelas.getDataById = (id,callback)=>{
+kelas.getDataById =  (id,callback)=>{
 
     const query = `SELECT * FROM kelas 
                     JOIN data_guru ON kelas.id_guru = data_guru.id_guru 

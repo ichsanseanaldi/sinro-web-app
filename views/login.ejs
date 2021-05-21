@@ -9,15 +9,15 @@
 
     <div class="container flex flex-j-c flex-a-c margin-top-70">
 
-        <div class="w-60 flex flex-a-c ">
+        <div class="w-40 flex flex-a-c ">
 
-            <div class="flex flex-1 flex-a-c flex-j-c">
+            <!-- <div class="flex flex-1 flex-a-c flex-j-c">
 
                 <img class="h-w-300 margin-bottom-50" src="./assets/presentation.png" alt="">
     
-            </div>
+            </div> -->
 
-            <div class="flex flex-1 flex-j-c flex-a-c flex-col-dir">
+            <div class="flex flex-1 flex-j-c flex-a-c flex-col-dir ">
 
                 <div class="words heading">
 
@@ -35,11 +35,11 @@
                     
                             <input class="input-control m-u-d-20 w-80" type="password" name="password" placeholder="Password" required id="password">
     
-                            <div class=" flex flex-a-c ">
+                            <div class=" flex flex-a-c">
     
                                 <input class="m-l-r-10 scaled" type="checkbox" name="toggle" id="toggle">
     
-                                <label class="m-l-r-10" for="toggle">Show Password</label>
+                                <label class="m-l-r-10 disabled" for="toggle">Show Password</label>
     
                             </div>
                             
@@ -51,7 +51,7 @@
     
                 </div>
 
-                <h3 class=<%= stats === false ? " popup-warning " : "hid" %>> <%= stats === false ? msg : '-' %> </h3>
+                <p class=<%= stats === false ? " popup-warning " : "hid" %>> <%= stats === false ? msg : '-' %> </p>
 
             </div>
 

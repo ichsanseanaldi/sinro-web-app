@@ -31,19 +31,15 @@
 
                     <tr>
 
-                        <td><%= r.username %></td>
-
-                        <td><%= r.password %></td>
-
                         <% if(r.isAdmin === 0){ %> 
+
+                            <td> <%= r.username %> </td>
+
+                            <td> <%= r.password %> </td>
 
                             <td><a class="red" href="/admin/delete/<%= r.id_akun %>">Delete</a> / <a class="primary" href="/admin/update/<%= r.id_akun %> ">Update</a></td>
 
-                        <% }else{ %> 
-
-                             <td>-</td>
-
-                        <% } %>    
+                        <% } %>   
 
                     </tr>
 
@@ -55,11 +51,11 @@
         
         </div>
 
-        <h1 class="centered-msg <%= status === true ? "popup-primary " : status === false ? "popup-warning" : "-" %> ">
+        <p class="centered-msg <%= status === true ? "popup-primary " : status === false ? "popup-warning" : "-" %> ">
 
             <%= msg %>
 
-        </h1> 
+        </p> 
 
     </div> 
 

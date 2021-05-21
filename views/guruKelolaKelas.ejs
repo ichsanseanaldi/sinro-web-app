@@ -11,36 +11,34 @@
             
             <% hasil.forEach(h=>{ %>
 
-                <h1>Pengelolaan Kelas <%= h.nama_kelas %> </h1>
+                <div class="heading text-start w-100">
 
-                <table class="infotable m-u-d-20 bg-subtle">
+                    <h1>Pengelolaan Kelas : </h1>
 
-                    <tr>
+                </div>
+
+                <table class="infotable m-u-d-20 bordered">
+
+
+                    <tr class="bg-primarylight"> 
+
                         <td>Kelas</td>
 
-                        <td>:</td>
+                        <td>Pengajar</td>
 
-                        <th><%= h.nama_kelas %></th>
+                        <td>NIP</td>
 
                     </tr>
 
                     <tr>
-                        <td>Pengajar / Guru</td>
 
-                        <td>:</td>
+                        <th><%= h.nama_kelas %></th>
 
                         <th><%= h.nama_guru %></th>
 
-                    </tr>      
-
-                    <tr>
-                        <td>NIP</td>
-
-                        <td>:</td>
-
                         <th><%= h.nip %> </th>
 
-                    </tr>  
+                    </tr>      
 
                 </table>
 
