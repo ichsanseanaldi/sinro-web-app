@@ -11,32 +11,41 @@
             
             <% hasil.forEach(h=>{ %>
 
-                <div class="heading text-start w-100">
+                <div class="heading text-start w-100 m-u-d-20">
 
-                    <h1>Pengelolaan Kelas : </h1>
+                    <h1><i class="fa fa-list"></i> Pengelolaan Kelas : </h1>
+
+                </div>
+
+                <div class="w-100 text-start">
+
+                    <p>Informasi Kelas & Wali Kelas :</p>
 
                 </div>
 
                 <table class="infotable m-u-d-20 bordered">
 
+                    <tr class="bg-white bordered"> 
 
-                    <tr class="bg-primarylight"> 
+                        <th>Kelas</th>
 
-                        <td>Kelas</td>
+                        <th>Wali Kelas</th>
 
-                        <td>Pengajar</td>
+                        <th>NIP</th>
 
-                        <td>NIP</td>
+                        <th>Tahun Ajaran</th>
 
                     </tr>
 
                     <tr>
 
-                        <th><%= h.nama_kelas %></th>
+                        <td><%= h.nama_kelas %></td>
 
-                        <th><%= h.nama_guru %></th>
+                        <td><%= h.nama_guru %></td>
 
-                        <th><%= h.nip %> </th>
+                        <td><%= h.nip %> </td>
+
+                        <td>(2022/2023)</td>
 
                     </tr>      
 

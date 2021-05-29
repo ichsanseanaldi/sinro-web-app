@@ -1,9 +1,8 @@
 :root{
-    --color-aqua : #2c92ff;
-    --color-primary: #331cff;
+    --color-scent : #8f8f8f;
+    --color-primary: #4167e4;
     --color-primarylight: #525252;
     --color-pink : #dc3545;
-    --color-pink-dark : #dc3545;
     --color-orange : #FEB546;
     --color-grey : #878787;
     --color-darkgrey: #393939;
@@ -12,7 +11,6 @@
     --color-black : #000000;
     --color-blacklight : #070707;
     --color-lightgrey : #dfdfdf;
-    --color-accent : #e6e9ed;
 }
 
 *, *::after, *::before{
@@ -109,8 +107,13 @@ table th,td{
 }
 
 /* RANDOM */
-.bb{
-    border-bottom: 2px solid var(--color-darkgrey);
+
+.border-r{
+    border-right: 1px solid var(--color-black);
+}
+
+.border-b{
+    border-bottom: 1px solid var(--color-black);
 }
 
 .tdec{
@@ -121,12 +124,16 @@ table th,td{
     border:2px solid var(--color-lightgrey);
 }
 
-.text-start{
-    text-align: start;
+.bordered-bottom-colored{
+    border-bottom: 2px solid var(--color-scent);
 }
 
-.b-r{
-    border-right: 2px solid var(--color-lightgrey);
+.bordered-right-colored{
+    border-right: 2px solid var(--color-scent);
+}
+
+.text-start{
+    text-align: start;
 }
 
 .centered-msg{
@@ -164,7 +171,7 @@ table th,td{
 }
 
 .primary{
-    color: var(--color-aqua);
+    color: var(--color-primary);
 }
 
 .disabled{
@@ -215,7 +222,7 @@ table th,td{
 }
 
 .bg-primary{
-    background-color: var(--color-aqua);
+    background-color: var(--color-primary);
     color:var(--color-white) ;
 }
 
@@ -231,7 +238,7 @@ table th,td{
 
 .primary-btn{
     padding: 10px 15px;
-    background-color: var(--color-aqua);
+    background-color: var(--color-primary);
     color: var(--color-white);
     cursor: pointer;
 }
@@ -269,8 +276,8 @@ table th,td{
 
 .popup-primary{
     padding: 10px 15px;
-    border: 2px solid var(--color-aqua);
-    color: var(--color-aqua-dark);
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -279,9 +286,10 @@ table th,td{
 }
 
 .popup-warning{
+    margin: 20px 0;
     padding: 10px 15px;
     border: 2px solid var(--color-pink);
-    color: var(--color-pink-dark) ;
+    color: var(--color-pink) ;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -561,7 +569,7 @@ h1.after{
     position: absolute;
     content:'';
     height: 35px;
-    background-color: var(--color-accent);
+    background-color: var(--color-lightgrey);
     bottom: 5px;
     left: 20px;
     right: 20px;
@@ -686,11 +694,25 @@ h1.after{
 
 /* SISWA */
 
+
 .siswatable th{
-    background-color: var(--color-blacklight);
-    color: var(--color-white);
+    background-color: var(--color-white);
+    border-bottom: 2px solid var(--color-subtle);
 }
 
 .siswatable tr:nth-child(odd){
     background-color: var(--color-subtle);
+}
+
+.rapor-container{
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.rapor tr , .rapor th , .rapor td {
+    border: 1px solid var(--color-grey);
 }

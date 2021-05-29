@@ -49,7 +49,7 @@
 
             <% result.forEach(r=>{ %>
 
-                <div class="inside-wrapper">
+                <div class="inside-wrapper flex flex-a-c flex-j-c flex-col-dir">
 
                     <div class="words">
 
@@ -61,58 +61,62 @@
 
                     </div>
 
-                    <div class="form-container flex flex-j-c flex-a-c">
+                    <div class="w-80 flex flex-a-c flex-j-c bordered rapor-container">
 
-                        <div class="w-60 flex flex-j-c flex-a-c flex-col-dir">
+                        <div class="flex flex-a-c flex-j-c w-80 m-u-d-40 flex-col-dir">
+                            
+                            <div>
+                                <i class="fa fa-book fa-5x"></i>
+                            </div>
 
-                            <table class="infotable bg-subtle">
+                            <div class="heading m-u-d-20 text-center">
 
-                                <tr>
-                                    <td>Nama</td>
+                                <h2>Laporan Hasil Penilaian Belajar Siswa</h2>
+                                <h3 class="m-u-d-10">Semester IV (Genap)</h3>
+                                <p class="m-u-d-10">Tahun Pelajaran (2022/2023)</p>
+    
+                            </div>
 
-                                    <td>:</td>
+                            <div class="m-u-d-10 w-100">
 
-                                    <th><%= r.nama_siswa %></th>
+                                <p>Informasi Siswa : </p>
+
+                            </div>
+
+                            <table class="rapor">
+
+                                <tr class="bg-subtle">
+
+                                    <th>Nama Lengkap Siswa</th>
+
+                                    <th>Nomor Induk Siswa (NIS)</th>
+
+                                    <th>Kelas</th>
 
                                 </tr>
 
                                 <tr>
-                                    <td>NIS</td>
+                                    
+                                    <td><%= r.nama_siswa %></td>
 
-                                    <td>:</td>
+                                    <td><%= r.nis%></td>
 
-                                    <th><%= r.nis%></th>
+                                    <td><%= r.nama_kelas %></td>
 
                                 </tr>      
 
-                                <tr>
-                                    <td>Kelas</td>
-
-                                    <td>:</td>
-
-                                    <th><%= r.nama_kelas %></th>
-
-                                </tr>  
 
                             </table>
 
-                        </div>
+                            <div class="m-u-d-10 w-100">
 
-                    </div>
-
-                    <div class="form-container flex flex-a-c flex-j-c ">
-
-                        <div class="flex flex-a-c flex-j-c w-60 m-u-d-40 flex-col-dir">
-
-                            <div class="m-u-d-20">
-
-                                <p>Hasil Nilai Raport</p>
+                                <p>Hasil Nilai Rapor :</p>
 
                             </div>
 
-                            <table class="raport bordered">
+                            <table class="rapor">
 
-                                <tr class="bg-blacklight">
+                                <tr class="bg-subtle">
                                     
                                     <th>No</th>
 
@@ -121,6 +125,8 @@
                                     <th>KKM</th>
 
                                     <th>Nilai</th>
+
+                                    <th>Keterangan</th>
 
                                 </tr>
 
@@ -133,6 +139,8 @@
 
                                     <td class=<%= r.nilai_mtk > 70 ? "-" : "red"  %>><%= r.nilai_mtk %></td>
 
+                                    <td><%= r.nilai_mtk === '-' ? 'Belum Dinilai' : r.nilai_mtk > 70 ? 'Melampaui KKM' : r.nilai_mtk === 70 ? 'Mencapai KKM' : 'Dibawah KKM' %> </td>
+
                                 </tr>
 
                                 <tr>
@@ -144,9 +152,17 @@
 
                                     <td class=<%= r.nilai_olahraga > 70 ? "-" : "red"  %>><%= r.nilai_olahraga %></td>
 
+                                    <td><%= r.nilai_olahraga=== '-' ? 'Belum Dinilai' : r.nilai_olahraga> 70 ? 'Melampaui KKM' : r.nilai_olahraga=== 70 ? 'Mencapai KKM' : 'Dibawah KKM' %> </td>
+
                                 </tr>
 
                             </table>
+
+                            <div class="words m-u-d-20">
+
+                                <p>Wali Kelas : <strong><%= r.nama_guru %> </strong></p>
+
+                            </div>
 
                         </div>
 

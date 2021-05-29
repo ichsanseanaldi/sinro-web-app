@@ -17,7 +17,13 @@
 
         <div class="inside-wrapper flex flex-col-dir flex-j-c flex-a-c">  
 
-            <h1 class="w-100 text-start m-u-d-20">Input Nilai :</h1>
+            <h1 class="w-100 text-start m-u-d-20"> <i class="fa fa-edit"></i> Input Nilai :</h1>
+
+            <div class="text-start w-100">
+
+                <p>Informasi Siswa : </p>
+
+            </div>
 
             <% result.forEach(h=>{ %>
 
@@ -27,7 +33,7 @@
 
                         <td>NIS</td>
 
-                        <td>Nama Siswa</td>
+                        <td>Nama Lengkap Siswa</td>
 
                         <td>Kelas</td>
 
@@ -47,13 +53,17 @@
 
             <%})%>
 
-                <p>Nilai Rapor</p>
+                <div class="text-start w-100">
 
-                <table class="siswatable bordered m-u-d-20">
+                    <p>Nilai Rapor : </p>
+
+                </div>
+
+                <table class="bordered m-u-d-20" border="">
 
                 <form action="/siswa/insertNilai" method="POST">
 
-                    <tr>
+                    <tr class="bordered">
 
                         <th>No</th>
 
@@ -92,7 +102,7 @@
 
                 </table>
 
-                <input class="btn primary-btn m-u-d-20" type="submit" value="Simpan & Selesai">
+                <input class="btn primary-btn m-u-d-10" type="submit" value="Simpan & Selesai">
 
                 </form>
 

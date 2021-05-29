@@ -11,12 +11,6 @@
 
         <div class="w-40 flex flex-a-c ">
 
-            <!-- <div class="flex flex-1 flex-a-c flex-j-c">
-
-                <img class="h-w-300 margin-bottom-50" src="./assets/presentation.png" alt="">
-    
-            </div> -->
-
             <div class="flex flex-1 flex-j-c flex-a-c flex-col-dir ">
 
                 <div class="words heading">
@@ -31,7 +25,7 @@
         
                         <div class="input-wrapper flex flex-col-dir flex-j-c flex-a-c">
         
-                            <input class="input-control m-u-d-20 w-80" type="text" name="username" placeholder="Username" required>
+                            <input class="input-control m-u-d-20 w-80" type="text" name="username" placeholder="Username" required autofocus>
                     
                             <input class="input-control m-u-d-20 w-80" type="password" name="password" placeholder="Password" required id="password">
     
@@ -51,7 +45,11 @@
     
                 </div>
 
-                <p class=<%= stats === false ? " popup-warning " : "hid" %>> <%= stats === false ? msg : '-' %> </p>
+                <% if(stats === false){ %> 
+
+                    <p class=<%= stats === false ? " popup-warning " : "hid" %>> <%= stats === false ? msg : '-' %> </p>
+
+                <% } %>
 
             </div>
 
