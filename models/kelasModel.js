@@ -1,6 +1,6 @@
 const db = require('../db/db.config');
 
-const kelas = function(data){
+const kelas = function (data) {
 
     this.nama_kelas = data.nama_kelas;
     this.nama_guru = data.nama_guru;
@@ -9,41 +9,41 @@ const kelas = function(data){
 
 }
 
-kelas.setData = (data,callback)=>{
+kelas.setData = (data, callback) => {
 
     const query = 'INSERT INTO kelas SET ?'
 
-    db.query(query,data,(err,rows)=>{
+    db.query(query, data, (err, rows) => {
 
-        err? console.log(err) : callback(null,rows);
+        err ? console.log(err) : callback(null, rows);
 
     })
 
 }
 
 
-kelas.getData = (callback)=>{
+kelas.getData = (callback) => {
 
     const query = 'SELECT * FROM kelas'
 
-    db.query(query, (err,rows)=>{
+    db.query(query, (err, rows) => {
 
-        err ? console.log(err) : callback(null,rows);
+        err ? console.log(err) : callback(null, rows);
 
     })
 
 }
 
 
-kelas.getDataById =  (id,callback)=>{
+kelas.getDataById = (id, callback) => {
 
     const query = `SELECT * FROM kelas 
                     JOIN data_guru ON kelas.id_guru = data_guru.id_guru 
                     JOIN infokelas ON kelas.id_namakelas = infokelas.id_namakelas
                     WHERE kelas.id_guru = ?`
 
-    db.query(query,id,(err,rows)=>{
-        err ? console.log(err) : callback(null,rows);
+    db.query(query, id, (err, rows) => {
+        err ? console.log(err) : callback(null, rows);
     })
 
 

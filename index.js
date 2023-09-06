@@ -20,12 +20,6 @@ app.use(express.static('public'));
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
-// app.use((req, res, next)=> {
-//     if (!req.)
-//         res.header('Cache-Control', 'private, no-cache, no-store, must-revalidate');
-//     next();
-// });
-
 app.get('/',(req,res)=>{
     res.render('mainLanding',{title:'Home'});
 })

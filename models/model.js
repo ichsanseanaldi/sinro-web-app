@@ -13,6 +13,7 @@ Akun.getAll = (callback)=>{
     db.query(query, (err, rows)=>{
         if(err) throw err;
         callback(null,rows);
+        console.log(rows);
     })
 
 }
@@ -81,6 +82,7 @@ Akun.getUsername = (data, callback)=>{
     const query = 'SELECT * FROM akun_guru WHERE username = ? AND password = ?';
 
     db.query(query,data,(err,rows)=>{
+        console.log(data,rows,err);
         if(err){
             callback(err,null);
         }

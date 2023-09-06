@@ -1,4 +1,3 @@
-const model = require('../models/kelasModel')
 const guru = require('../models/guruModel')
 const namaKelas = require('../models/namaKelasModel');
 const kelas = require('../models/kelasModel');
@@ -18,7 +17,7 @@ exports.setDataKelas = (req,res)=>{
             const nama_kelas = hasil[0].nama_kelas;
             data.nama_kelas = nama_kelas;
 
-            model.setData(data,err=>{
+            kelas.setData(data,err=>{
 
                 err? 
 

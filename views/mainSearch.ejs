@@ -1,168 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include ('./partials/head.ejs') %>
+<%- include ('./partials/head.ejs') %>
 
-<body>
+    <body>
 
-    <%- include ('./partials/mainNav.ejs') %> 
+        <%- include ('./partials/mainNav.ejs') %>
 
-    <div class="container flex flex-j-c flex-a-c">
+            <div class="container flex flex-j-c flex-a-c">
 
-        <div class="inside-wrapper">
+                <div class="inside-wrapper">
 
-            <div class="form-container flex flex-a-c flex-j-c flex-col-dir ">
+                    <div class="form-container flex flex-a-c flex-j-c flex-col-dir ">
 
-                <div class="form-wrapper w-80 margin-top-70 p-15-20">
+                        <div class="form-wrapper w-80 margin-top-70 p-15-20">
 
-                    <div class="heading-form">
+                            <div class="heading-form">
 
-                        <p>Masukan Nomor Induk Siswa <b>(NIS)</b> : </p>   
-
-                    </div>  
-
-                    <form action="/siswa/search" method="GET">
-
-                        <div class="input-wrapper flex"> 
-
-                            <input class="input-control flex-3" type="text" name="nis" id="nis" placeholder="Nomor Induk Siswa" required>  
-
-                            <button class="btn primary-btn flex-1"type="submit"> Cari Siswa <i class=" fa fa-search"></i> </button>
-
-                        </div>
-
-                    </form>
-
-                </div>  
-
-            </div>
-
-        </div>
-
-    </div>
-
-    <div class="container m-u-d-40 flex flex-j-c flex-a-c flex-col-dir">
-
-    <% if(result) { %>
-
-        <% if(result.length>0) { %>
-
-            <% result.forEach(r=>{ %>
-
-                <div class="inside-wrapper flex flex-a-c flex-j-c flex-col-dir">
-
-                    <div class="words">
-
-                        <div class="heading m-u-d-20">
-
-                            <p>Ditemukan 1 Hasil pencarian NIS : <span class="primary"><strong><%= r.nis %></strong></span></p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="w-80 flex flex-a-c flex-j-c bordered rapor-container">
-
-                        <div class="flex flex-a-c flex-j-c w-80 m-u-d-40 flex-col-dir">
-                            
-                            <div>
-                                <i class="fa fa-book fa-5x"></i>
-                            </div>
-
-                            <div class="heading m-u-d-20 text-center">
-
-                                <h2>Laporan Hasil Penilaian Belajar Siswa</h2>
-                                <h3 class="m-u-d-10">Semester IV (Genap)</h3>
-                                <p class="m-u-d-10">Tahun Pelajaran (2022/2023)</p>
-    
-                            </div>
-
-                            <div class="m-u-d-10 w-100">
-
-                                <p>Informasi Siswa : </p>
+                                <p>Masukan Nomor Induk Siswa <b>(NIS)</b> : </p>
 
                             </div>
 
-                            <table class="rapor">
+                            <form action="/siswa/search" method="GET">
 
-                                <tr class="bg-subtle">
+                                <div class="input-wrapper flex">
 
-                                    <th>Nama Lengkap Siswa</th>
+                                    <input class="input-control flex-3" type="text" name="nis" id="nis" placeholder="Nomor Induk Siswa" required>
 
-                                    <th>Nomor Induk Siswa (NIS)</th>
+                                    <button class="btn primary-btn flex-1" type="submit"> Cari Siswa <i class=" fa fa-search"></i> </button>
 
-                                    <th>Kelas</th>
+                                </div>
 
-                                </tr>
-
-                                <tr>
-                                    
-                                    <td><%= r.nama_siswa %></td>
-
-                                    <td><%= r.nis%></td>
-
-                                    <td><%= r.nama_kelas %></td>
-
-                                </tr>      
-
-
-                            </table>
-
-                            <div class="m-u-d-10 w-100">
-
-                                <p>Hasil Nilai Rapor :</p>
-
-                            </div>
-
-                            <table class="rapor">
-
-                                <tr class="bg-subtle">
-                                    
-                                    <th>No</th>
-
-                                    <th>Mata Pelajaran</th>
-
-                                    <th>KKM</th>
-
-                                    <th>Nilai</th>
-
-                                    <th>Keterangan</th>
-
-                                </tr>
-
-                                <tr>
-                                    <td>1</td>
-
-                                    <td>Matematika</td>
-
-                                    <td>70</td>
-
-                                    <td class=<%= r.nilai_mtk > 70 ? "-" : "red"  %>><%= r.nilai_mtk %></td>
-
-                                    <td><%= r.nilai_mtk === '-' ? 'Belum Dinilai' : r.nilai_mtk > 70 ? 'Melampaui KKM' : r.nilai_mtk === 70 ? 'Mencapai KKM' : 'Dibawah KKM' %> </td>
-
-                                </tr>
-
-                                <tr>
-                                    <td>2</td>
-
-                                    <td>Olahraga</td>
-                                    
-                                    <td>70</td>
-
-                                    <td class=<%= r.nilai_olahraga > 70 ? "-" : "red"  %>><%= r.nilai_olahraga %></td>
-
-                                    <td><%= r.nilai_olahraga=== '-' ? 'Belum Dinilai' : r.nilai_olahraga> 70 ? 'Melampaui KKM' : r.nilai_olahraga=== 70 ? 'Mencapai KKM' : 'Dibawah KKM' %> </td>
-
-                                </tr>
-
-                            </table>
-
-                            <div class="words m-u-d-20">
-
-                                <p>Wali Kelas : <strong><%= r.nama_guru %> </strong></p>
-
-                            </div>
+                            </form>
 
                         </div>
 
@@ -170,17 +39,169 @@
 
                 </div>
 
-            <% }) %> 
+            </div>
 
-        <% } else { %>  
+            <div class="container m-u-d-40 flex flex-j-c flex-a-c flex-col-dir">
 
-            <p class=" popup-warning ">Data siswa tidak ditemukan..</p>
+                <% if(result) { %>
 
-        <% } %> 
+                    <div class="inside-wrapper flex flex-a-c flex-j-c flex-col-dir">
 
-    <% } %>
+                        <div class="words">
 
-    </div> 
+                            <div class="heading m-u-d-20">
 
-</body>
+                                <p>Ditemukan 1 Hasil pencarian NIS : <span class="primary"><strong>
+                                            <%= result.nis %>
+                                        </strong></span></p>
+
+                            </div>
+
+                        </div>
+
+                        <div class="w-80 flex flex-a-c flex-j-c bordered rapor-container">
+
+                            <div class="flex flex-a-c flex-j-c w-80 m-u-d-40 flex-col-dir">
+                            
+                                <div>
+                                    <i class="fa fa-book fa-5x"></i>
+                                </div>
+
+                                <div class="heading m-u-d-20 text-center">
+
+                                    <h2>Laporan Hasil Penilaian Belajar Siswa</h2>
+
+                                    <h3 class="m-u-d-10">Semester IV (Genap)</h3>
+
+                                    <p class="m-u-d-10">Tahun Pelajaran (2023/2024)</p>
+
+                                </div>
+
+                                <div class="m-u-d-10 w-100">
+
+                                    <p>Informasi Siswa : </p>
+
+                                </div>
+
+                                <table class="rapor">
+
+                                    <tr class="bg-subtle">
+
+                                        <th>Nama Lengkap Siswa</th>
+
+                                        <th>Nomor Induk Siswa (NIS)</th>
+
+                                        <th>Kelas</th>
+
+                                    </tr>
+
+                                    <tr>
+
+                                        <td>
+                                            <%= result.nama_siswa %>
+                                        </td>
+
+                                        <td>
+                                            <%= result.nis%>
+                                        </td>
+
+                                        <td>
+                                            <%= result.nama_kelas %>
+                                        </td>
+
+                                    </tr>
+
+
+                                </table>
+
+                                <div class="m-u-d-10 w-100">
+
+                                    <p>Hasil Nilai Rapor :</p>
+
+                                </div>
+
+                                <table class="rapor">
+
+                                    <tr class="bg-subtle">
+                                    
+                                        <th>No</th>
+
+                                        <th>Mata Pelajaran</th>
+
+                                        <th>KKM</th>
+
+                                        <th>Nilai</th>
+
+                                        <th>Keterangan</th>
+
+                                    </tr>
+
+                                    <tr>
+                                        <td>1</td>
+
+                                        <td>Matematika</td>
+
+                                        <td>70</td>
+
+                                        <td class=<%=result.nilai_mtk> 70 ? "-" : "red" %>><%= result.nilai_mtk %>
+                                        </td>
+
+                                        <td>
+                                            <%= result.nilai_mtk==='-' ? 'Belum Dinilai' : result.nilai_mtk> 70 ?
+                                                'Melampaui KKM' : result.nilai_mtk === 70 ? 'Mencapai KKM' : 'DibawahKKM' %>
+                                        </td>
+                                        </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>Olahraga</td>
+                                        <td>70</td>
+                                        <td class= <%=result.nilai_olahraga> 70 ? "-" : "red" %>>
+                                            <%= result.nilai_olahraga %>
+                                        </td>
+                                        <td>
+                                            <%= result.nilai_olahraga==='-' ? 'Belum Dinilai' : result.nilai_olahraga>
+                                                70 ?
+
+                                                'Melampaui KKM' :
+
+                                                result.nilai_olahraga === 70 ?
+
+                                                'Mencapai KKM' : 'Dibawah KKM'
+                                            %>
+                                                
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <div class="words m-u-d-20">
+
+                                    <p>Wali Kelas : 
+                                        <strong>
+                                            <%= result.nama_guru %>
+                                        </strong>
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <% } if(result === undefined) { %>
+
+                        <p class=" popup-warning ">Data siswa tidak ditemukan..</p>
+
+                    <% } else { %>
+                        
+                        <% null %>
+
+                    <% } %>
+
+
+            </div>
+
+    </body>
+
 </html>

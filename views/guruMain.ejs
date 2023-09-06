@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <%- include ('./partials/head.ejs') %>
+    
 <body>
   
     <% if(result[0].hasClass === 0){ %> 
@@ -30,7 +32,9 @@
                                         <% if(l.status === 0) { %>
 
                                             <option value="<%= l.id_namakelas %>">
+
                                                 <%= l.nama_kelas%>
+
                                             </option>
 
                                         <% } %>
@@ -80,7 +84,6 @@
     </div>
 
     <% } %> 
-
 
 </body>
 </html>

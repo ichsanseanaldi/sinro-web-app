@@ -1,6 +1,5 @@
 const db = require('../db/db.config')
 
-
 const guru = function(data){
 
     this.nip = data.nip;

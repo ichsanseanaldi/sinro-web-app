@@ -6,6 +6,7 @@ const siswa = function(data){
     this.nama_siswa = data.nama_siswa;
     this.hasNilai = 0;
     this.id_kelas = data.id_kelas;
+    this.id_rapor = data.id_rapor;
 
 }
 
@@ -44,7 +45,11 @@ siswa.getDataByNis = (nis,callback)=>{
                     WHERE siswa.nis = ?`
 
     db.query(query,nis,(err,rows)=>{
-        err ? console.log(err) : callback(null,rows);
+
+        const error = new Error('Error')
+
+        err ? callback(error,null) : callback(err,rows[0]);
+        
     })
 
 }

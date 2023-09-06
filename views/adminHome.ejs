@@ -11,7 +11,7 @@
 
         <div class="inside-wrapper">
 
-            <% if(result && result.length > 0){ %>
+            <% if(result.length > 0 && result[1]){ %>
 
                 <h1 class="m-u-d-10">Users List :</h1>
 
@@ -39,7 +39,7 @@
 
                             <td><a class="red" href="/admin/delete/<%= r.id_akun %>">Delete</a> / <a class="primary" href="/admin/update/<%= r.id_akun %> ">Update</a></td>
 
-                        <% } %>   
+                        <% } %>
 
                     </tr>
 
@@ -47,8 +47,12 @@
 
                 </table>
 
-            <% } %>  
-        
+                <%} else {%>
+
+                    <h1 class="centered-msg red">No User Listed</h1> 
+
+                <% } %>   
+              
         </div>
 
         <p class="centered-msg <%= status === true ? "popup-primary " : status === false ? "popup-warning" : "-" %> ">

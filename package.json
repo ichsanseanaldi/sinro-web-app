@@ -2,9 +2,9 @@
   "name": "sinro-app",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
-    "start": "nodemon app",
+    "start": "nodemon index",
     "test": "jest --detectOpenHandles"
   },
   "keywords": [],

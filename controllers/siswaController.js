@@ -31,9 +31,9 @@ exports.setNilaiSiswa = (req,res)=>{
 
         err? console.log(err) : 
 
-        model.updateHasNilai([1,id], (err)=>{
+        model.updateHasNilai([1,id], ()=>{
 
-            err ? console.log(err) : res.redirect('/kelas/kelola')
+            res.redirect('/kelas/kelola')
 
         })
 
@@ -47,7 +47,7 @@ exports.getSiswaNis = (req,res)=>{
 
     model.getDataByNis(nis,(err,result)=>{
 
-            err? console.log(err) : res.render('mainSearch', {result,title:'Search'});
+        res.render('mainSearch', {result,title:'Search'});
     })
 
 }
@@ -57,11 +57,9 @@ exports.getSiswaById = (req,res)=>{
 
     const id =req.params.id;
 
-
     model.getDataById(id,(err,result)=>{
 
-
-        err? console.log(err) : res.render('guruAddNilai', {result,title:'Kelola'});
+        res.render('guruAddNilai', {result,title:'Kelola'});
 
     })
 
